@@ -87,6 +87,7 @@ const RestaurantFetcher: React.FC = () => {
       <h1>Restaurant Finder</h1>
         
         <div>
+          <h3>Category filter</h3>
           <button onClick={handleClearFilter}>Clear Filter</button>
           {categories.map((category, index) => (
             <button key={index} onClick={() => handleCategoryFilter(category)}>
