@@ -96,11 +96,11 @@ const RestaurantFetcher: React.FC = () => {
         </div>
 
         <h2>Nearby restaurants</h2>
-        
+
         <ul>
           {filteredRestaurants.map((restaurant, index) => (
             <li key={index}>
-              <strong>{restaurant.title}</strong> - {restaurant.distance} meters away
+              <strong>{restaurant.title}</strong> - {(restaurant.distance / 1000).toFixed(2)} km away
               <p>Category: {restaurant.category}</p>
               {restaurant.contact !== 'Unknown' && <p>Contact: {restaurant.contact}</p>}
               {/* {restaurant.contact && <p>Contact: {restaurant.contact}</p>} */}
