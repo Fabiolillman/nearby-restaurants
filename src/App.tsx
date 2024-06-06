@@ -8,7 +8,6 @@ const App: React.FC = () => {
   return (
     <Provider store={store}> 
       <div>
-        <h1>Restaurant Finder</h1>
         <RestaurantFetcher /> 
       </div>
     </Provider>

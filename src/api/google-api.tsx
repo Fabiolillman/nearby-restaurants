@@ -14,6 +14,9 @@ export interface Restaurant {
     lng: number;
   };
   distance: number; 
+  category: string; 
+  contact: string; 
+  
 }
 
 export const fetchRestaurants = async (location: Location): Promise<Restaurant[]> => {
@@ -27,6 +30,7 @@ export const fetchRestaurants = async (location: Location): Promise<Restaurant[]
       },
     });
 
+    console.log("This is the response from the api", response)
     return response.data.items.map((item: any) => ({
       title: item.title,
       position: {
@@ -34,6 +38,8 @@ export const fetchRestaurants = async (location: Location): Promise<Restaurant[]
         lng: item.position.lng,
       },
       distance: item.distance,
+      category: item.categories[0]?.name || 'Unknown', 
+      contact: item.contacts?.[0]?.phone?.[0]?.value || 'Unknown', 
     }));
   } catch (error: any) {
     throw new Error(error.response.data.error || 'Error fetching restaurants');

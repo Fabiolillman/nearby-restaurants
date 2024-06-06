@@ -15,7 +15,7 @@ export type Coordinates = {
 export type Restaurant = {
   title: string;
   position: Coordinates;
-  distance: number; // Add distance property to include distance information
+  distance: number;
 };
 
 export type RootState = ReturnType<typeof store.getState>;
