@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_KEY = 'TNjxnuqwaU-6Ck4rnXiOaax0eVyMD5zYEjtMJOxRSIY';
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 
 export interface Location {
   latitude: number;
